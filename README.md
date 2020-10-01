@@ -1,6 +1,6 @@
 # CollectAnswer - UWP App
 
-This application was created by Tadeáš Drab (me) as my final project for student programme called Student Training Center by Microsoft Slovakia.
+This application was created by Tadeáš Drab (me) as my final project for student program called Student Training Center by Microsoft Slovakia.
 
 **About app**
 
