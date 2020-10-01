@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="CollectAnswers.MainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CollectAnswers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:data="using:CollectAnswers.Models" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded"
+    Unloaded="Page_Unloaded">
+
+    <Page.Resources>
+        <DataTemplate x:DataType="data:Post" x:Key="PostsTemplate">
+            <StackPanel Margin="8" HorizontalAlignment="Stretch">
+                <TextBlock FontSize="16" Text="{x:Bind PostIdConverted()}" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="{x:Bind Text}" TextWrapping="Wrap" VerticalAlignment="Top"></TextBlock>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" >
+                    <TextBlock Margin="0,5,0,4" Text="Pridal: " Foreground="Gray" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Margin="4,5,0,4" Text="{x:Bind AuthorName}" Foreground="Gray" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" >
+                    <TextBlock Margin="4" FontFamily="Segoe MDL2" Text="{x:Bind ReactionsCountConverted()}" Foreground="Gray" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                    <TextBlock Margin="4" FontFamily="Segoe MDL2 Assets" Text="&#xE8E1;" Foreground="Gray" TextWrapping="Wrap" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="White">
+        <Grid Background="LightGray">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*" MinWidth="500" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" x:Name="gridPosts" Margin="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Margin="8" Padding="8" Background="GhostWhite">
+                    <ListView ItemsSource="{x:Bind Posts}" ItemTemplate="{StaticResource PostsTemplate}" IsItemClickEnabled="True" ItemClick="ListView_ItemClick">
+
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="4">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <Button x:Name="btnLoadQ" Click="btnLoadQ_Click" Content="Načítať viac príspevkov" Margin="4" Background="WhiteSmoke" Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="text_loadQuestions" Margin="4" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="btnSearch"
+                    Content="Vyhľadať otázky"
+                    Margin="4"
+                    Background="DimGray"
+                    Foreground="White"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                            Click="btnSearch_Click"/>
+                        
+                        <Button x:Name="btnNewPost"
+                    Content="Položiť novú otázku"
+                    Margin="4"
+                    Background="LimeGreen"
+                    Foreground="White"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                            Click="btnNewPost_Click"/>
+
+                        <Button x:Name="btnLogout"
+                        Click="btnLogout_Click"
+                    Content="Odhlásiť sa"
+                    Margin="4"
+                    Background="#D32424"
+                    Foreground="White"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

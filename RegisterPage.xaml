@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="CollectAnswers.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CollectAnswers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid VerticalAlignment="Center" Background="White"
+              Margin="16"
+              Padding="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       Text="Collect Answer - Registrácia" FontSize="24px" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="txtUser"
+                     Grid.Row="1"
+                     PlaceholderText="Uživateľské meno"
+                     Margin="8"/>
+            <PasswordBox x:Name="txtPassword"
+                     Grid.Row="2"
+                     PlaceholderText="Heslo"
+                     Margin="8"/>
+            <PasswordBox x:Name="txtRepeatPassword"
+                     Grid.Row="3"
+                     PlaceholderText="Heslo znova"
+                     Margin="8"/>
+            <Button x:Name="btnRegister"
+                     Content="Registrovať sa"
+                     Margin="8"
+                     Background="#D32424"
+                     Foreground="White"
+                     HorizontalAlignment="Stretch" 
+                     Click="btnRegister_Click"
+                     Grid.Row="4"/>
+            <TextBlock x:Name="textStatus"
+                       Grid.Row="5"
+                       Text="Pri registrácii použiťe unikátne uživateľské meno a heslo!" FontSize="16px" HorizontalAlignment="Center"></TextBlock>
+            <Button x:Name="btnLogin"
+                     Content="Prejsť na prihlasovaciu stránku"
+                     Margin="8"
+                     Background="LimeGreen"
+                     Foreground="White"
+                     HorizontalAlignment="Stretch" 
+                     Click="btnLogin_Click"
+                     Grid.Row="6"/>
+        </Grid>
+    </Grid>
+</Page>

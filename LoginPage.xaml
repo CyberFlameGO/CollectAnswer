@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="CollectAnswers.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CollectAnswers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid VerticalAlignment="Center" Background="White"
+              Margin="16"
+              Padding="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       Text="Collect Answer - Prihlásenie" FontSize="24px" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="txtUser"
+                     Grid.Row="1"
+                     PlaceholderText="Uživateľské meno"
+                     Margin="8"/>
+            <PasswordBox x:Name="txtPassword"
+                     Grid.Row="2"
+                     PlaceholderText="Heslo"
+                     Margin="8"/>
+            <TextBlock x:Name="textStatus"
+                       Grid.Row="3"
+                       Text="Prihláste sa pomocou vášho uživateľského mena a hesla." FontSize="16px" HorizontalAlignment="Center"></TextBlock>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnLogin"
+                        Grid.Column="0"
+                        Content="Prihlásiť sa"
+                        Margin="8"
+                        Background="LimeGreen"
+                        Foreground="White"
+                        HorizontalAlignment="Stretch" 
+                        Click="btnLogin_Click"/>
+                <Button x:Name="btnRegister"
+                        Grid.Column="1"
+                        Content="Registrovať sa"
+                        Margin="8"
+                        Background="#D32424"
+                        Foreground="White"
+                        HorizontalAlignment="Stretch" 
+                        Click="btnRegister_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

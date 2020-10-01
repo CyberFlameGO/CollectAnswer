@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="CollectAnswers.AddPostPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CollectAnswers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button Style="{StaticResource NavigationBackButtonNormalStyle}" VerticalAlignment="Top" Margin="16" Click="Button_HandleBack"/>
+        <Grid VerticalAlignment="Center" Background="White"
+              Margin="16"
+              Padding="32">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       Text="Collect Answer - Pridať príspevok" FontSize="24px" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="txtPost"
+                     Grid.Row="1"
+                     Margin="8"
+                     HorizontalAlignment="Center"
+                     Height="100"
+                     TextWrapping="Wrap"
+                     MaxLength="512"
+                     MinHeight="100"
+                     MaxHeight="100"
+                     MinWidth="500"
+                     MaxWidth="500"/>
+            <TextBlock x:Name="textStatus"
+                       Grid.Row="2"
+                       Text="Svoj príspevok napíšte hore" FontSize="16px" HorizontalAlignment="Center"></TextBlock>
+            <Button x:Name="btnRegister"
+                        Grid.Row="3"
+                        Content="Pridať tento príspevok"
+                        Margin="8"
+                        Background="LimeGreen"
+                        Foreground="Black"
+                        HorizontalAlignment="Center" 
+                        Click="btnPost_Click"/>
+        </Grid>
+    </Grid>
+</Page>
